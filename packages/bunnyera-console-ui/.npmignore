@@ -1,0 +1,47 @@
+# Source files
+src/
+
+# Development
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Testing
+coverage/
+.nyc_output/
+*.test.ts
+*.test.tsx
+*.spec.ts
+*.spec.tsx
+
+# Build
+tsconfig.json
+vite.config.ts
+postcss.config.js
+tailwind.config.js
+.eslintrc
+.prettierrc
+
+# Git
+.git/
+.gitignore
+
+# CI/CD
+.github/
+.gitlab-ci.yml
+.travis.yml
+
+# Documentation (keep README.md)
+docs/
+*.md
+!README.md
+
+# Misc
+.env*
+*.log
+.cache/
+.temp/
+.tmp/

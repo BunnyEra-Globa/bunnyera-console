@@ -1,0 +1,7 @@
+{
+  "name": "bunnyera-console",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ]
+}
