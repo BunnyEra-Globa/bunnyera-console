@@ -3,17 +3,13 @@
 A collection of internal applications for the BunnyEra Console. Each app is a page module running inside the `bunnyera-console-ui` layout.
 
 ## 📦 Installation
-
-```bash
-
 npm install bunnyera-console-apps
 # or
 yarn add bunnyera-console-apps
 # or
 pnpm add bunnyera-console-apps
 
-📋 Included Applications
-
+#📋 Included Applications
 App	Component	Description
 Dashboard	DashboardApp	Console overview showing project count, error count, recent activity, and resource statistics
 Projects	ProjectsApp	Project center with list view, filters, and detail panel
@@ -23,7 +19,7 @@ LogCenter	LogCenterApp	Log center with level filters and error inspection
 Notes	NotesApp	Notes app with list, edit, create/delete features
 Settings	SettingsApp	Settings for theme, language, shortcuts, notifications, and more
 
-🚀 Quick Start
+#🚀 Quick Start
 
 Import a single app
 tsx
@@ -64,7 +60,7 @@ function AppRoutes() {
   );
 }
 
-📖 API Documentation
+#📖 API Documentation
 
 DashboardApp
 Console overview showing key metrics and recent activity.
@@ -130,7 +126,7 @@ interface SettingsAppProps {
 
 <SettingsApp className="my-settings" />
 
-🔧 Mock API
+#🔧 Mock API
 
 This package uses the bunnyera-console-core Mock API for data interactions.
 
@@ -165,10 +161,10 @@ const newNote = await mockApi.notes.create({ title: 'New Note', content: '' });
 const settings = await mockApi.settings.get();
 await mockApi.settings.update({ theme: 'dark' });
 
-🏗️ Project Structure
+# 🏗️ Project Structure
 
-Code
-bunnyera-console-apps/
+#Code
+#bunnyera-console-apps/
 ├── src/
 │   ├── apps/
 │   │   ├── DashboardApp/      # Console overview
@@ -189,7 +185,7 @@ bunnyera-console-apps/
 ├── vite.config.ts
 └── README.md
 
-🛠️ Development
+#🛠️ Development
 
 bash
 # Install dependencies
@@ -207,8 +203,7 @@ npm run type-check
 # Lint
 npm run lint
 
-📄 Dependencies
-
+#📄 Dependencies
 Peer Dependencies
 react: ^18.0.0
 
@@ -219,12 +214,10 @@ bunnyera-console-ui: Layout components (workspace)
 
 bunnyera-console-core: Logic core (workspace)
 
-📝 License
-
-MIT License
+#📝 License
+ MIT License
 
 🤝 Contributing
-
 Issues and pull requests are welcome!
 
 Made with ❤️ by BunnyEra Team
