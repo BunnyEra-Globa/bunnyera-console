@@ -1,16 +1,19 @@
 # bunnyera-console-apps
 
-A collection of internal applications for the BunnyEra Console. Each app is a page module rendered inside the `bunnyera-console-ui` layout.
+A collection of internal applications for the BunnyEra Console. Each app is a page module running inside the `bunnyera-console-ui` layout.
 
 ## 📦 Installation
 
 ```bash
+
 npm install bunnyera-console-apps
 # or
 yarn add bunnyera-console-apps
 # or
 pnpm add bunnyera-console-apps
+
 📋 Included Applications
+
 App	Component	Description
 Dashboard	DashboardApp	Console overview showing project count, error count, recent activity, and resource statistics
 Projects	ProjectsApp	Project center with list view, filters, and detail panel
@@ -19,7 +22,9 @@ AIHub	AIHubApp	AI workspace with chat interface and agent selection
 LogCenter	LogCenterApp	Log center with level filters and error inspection
 Notes	NotesApp	Notes app with list, edit, create/delete features
 Settings	SettingsApp	Settings for theme, language, shortcuts, notifications, and more
+
 🚀 Quick Start
+
 Import a single app
 tsx
 import { DashboardApp } from 'bunnyera-console-apps';
@@ -58,9 +63,11 @@ function AppRoutes() {
     </Routes>
   );
 }
+
 📖 API Documentation
+
 DashboardApp
-Console overview app showing key metrics and recent activity.
+Console overview showing key metrics and recent activity.
 
 tsx
 interface DashboardAppProps {
@@ -69,7 +76,7 @@ interface DashboardAppProps {
 
 <DashboardApp className="my-dashboard" />
 ProjectsApp
-Project center app with list view, filtering, and detail view.
+Project center supporting list view, filtering, and detail view.
 
 tsx
 interface ProjectsAppProps {
@@ -78,7 +85,7 @@ interface ProjectsAppProps {
 
 <ProjectsApp className="my-projects" />
 ResourcesApp
-Resource center app with grouped display and search support.
+Resource center displaying grouped resources with search support.
 
 tsx
 interface ResourcesAppProps {
@@ -87,7 +94,7 @@ interface ResourcesAppProps {
 
 <ResourcesApp className="my-resources" />
 AIHubApp
-AI workspace app providing chat interface and agent selection.
+AI workspace providing chat interface and agent selection.
 
 tsx
 interface AIHubAppProps {
@@ -96,7 +103,7 @@ interface AIHubAppProps {
 
 <AIHubApp className="my-aihub" />
 LogCenterApp
-Log center app with level filtering and error inspection.
+Log center supporting level filtering and error inspection.
 
 tsx
 interface LogCenterAppProps {
@@ -105,7 +112,7 @@ interface LogCenterAppProps {
 
 <LogCenterApp className="my-logs" />
 NotesApp
-Notes app supporting create, edit, delete (stored in memory).
+Notes app supporting create, edit, and delete (stored in memory).
 
 tsx
 interface NotesAppProps {
@@ -122,7 +129,9 @@ interface SettingsAppProps {
 }
 
 <SettingsApp className="my-settings" />
+
 🔧 Mock API
+
 This package uses the bunnyera-console-core Mock API for data interactions.
 
 tsx
@@ -155,8 +164,10 @@ const newNote = await mockApi.notes.create({ title: 'New Note', content: '' });
 // Settings
 const settings = await mockApi.settings.get();
 await mockApi.settings.update({ theme: 'dark' });
+
 🏗️ Project Structure
-text
+
+Code
 bunnyera-console-apps/
 ├── src/
 │   ├── apps/
@@ -177,7 +188,9 @@ bunnyera-console-apps/
 ├── tsconfig.json
 ├── vite.config.ts
 └── README.md
+
 🛠️ Development
+
 bash
 # Install dependencies
 npm install
@@ -193,7 +206,9 @@ npm run type-check
 
 # Lint
 npm run lint
+
 📄 Dependencies
+
 Peer Dependencies
 react: ^18.0.0
 
@@ -205,9 +220,11 @@ bunnyera-console-ui: Layout components (workspace)
 bunnyera-console-core: Logic core (workspace)
 
 📝 License
+
 MIT License
 
 🤝 Contributing
+
 Issues and pull requests are welcome!
 
 Made with ❤️ by BunnyEra Team
