@@ -1,0 +1,60 @@
+{
+  "id": "page_home_main",
+  "siteId": "site_bunny_landing_v3",
+  "name": "Home",
+  "slug": "",
+  "isHome": true,
+  "meta": {
+    "title": "BunnyEra Sites Studio — Build Without Limits",
+    "description": "Visual website builder for creators who demand precision, modularity, and digital sovereignty. Dark console aesthetic meets intuitive design.",
+    "keywords": "website builder, no-code, visual editor, modular sections, dark theme, neon accents",
+    "ogTitle": "BunnyEra Sites Studio",
+    "ogDescription": "Transform ideas into digital sovereignty. The visual builder for precision creators.",
+    "ogImage": "https://bunnyera.studio/og/home-v3.jpg",
+    "twitterCard": "summary_large_image",
+    "canonicalUrl": "https://bunnyera.studio",
+    "robots": "index, follow"
+  },
+  "styles": {
+    "backgroundColor": "#0a0a0f",
+    "textColor": "#e2e8f0",
+    "accentColor": "#6366f1",
+    "padding": "0",
+    "maxWidth": "100%"
+  },
+  "sections": ["sec_hero_main", "sec_about_story", "sec_features_core"],
+  "navigation": {
+    "enabled": true,
+    "style": "fixed",
+    "logo": "/assets/logo-bunnyera.svg",
+    "links": [
+      { "label": "Features", "href": "#features" },
+      { "label": "About", "href": "#about" },
+      { "label": "Templates", "href": "#templates" },
+      { "label": "Pricing", "href": "#pricing" }
+    ],
+    "cta": {
+      "label": "Start Building",
+      "href": "/signup"
+    }
+  },
+  "footer": {
+    "enabled": true,
+    "style": "minimal",
+    "copyright": "© 2024-2025 BunnyEra Studio. All rights reserved.",
+    "links": [
+      { "label": "Privacy", "href": "/privacy" },
+      { "label": "Terms", "href": "/terms" },
+      { "label": "Contact", "href": "/contact" }
+    ]
+  },
+  "analytics": {
+    "pageView": true,
+    "scrollDepth": true,
+    "sectionEngagement": true
+  },
+  "createdAt": "2024-04-22T14:35:00.000Z",
+  "updatedAt": "2025-02-16T09:30:00.000Z",
+  "publishedAt": "2025-02-14T16:22:00.000Z",
+  "version": "3.2.1"
+}

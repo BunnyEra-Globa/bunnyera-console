@@ -1,0 +1,101 @@
+{
+  "id": "tpl_bunnyera_landing_v3",
+  "name": "BunnyEra Landing",
+  "slug": "bunnyera-landing",
+  "description": "The signature template that launched a movement. Dark console aesthetic, neon accents, and modular precision for creators who demand sovereignty over their digital presence.",
+  "category": "landing",
+  "tags": ["dark-theme", "modern", "tech", "minimal", "showcase"],
+  "thumbnail": "/templates/bunnyera-landing/thumbnail.jpg",
+  "previewUrl": "https://bunnyera.studio/preview/bunnyera-landing",
+  "version": "3.2.1",
+  "author": {
+    "name": "BunnyEra Studio",
+    "url": "https://bunnyera.studio"
+  },
+  "includes": {
+    "pages": ["home"],
+    "sections": ["hero", "about", "features", "testimonials", "pricing", "cta", "footer"],
+    "components": ["button", "card", "navigation", "form"]
+  },
+  "compatibility": {
+    "browsers": ["chrome", "firefox", "safari", "edge"],
+    "responsive": true,
+    "darkMode": true
+  },
+  "defaultData": {
+    "site": {
+      "name": "My BunnyEra Site",
+      "description": "A beautiful site built with BunnyEra"
+    },
+    "theme": {
+      "primaryColor": "#6366f1",
+      "accentColor": "#a5b4fc",
+      "backgroundColor": "#0a0a0f",
+      "textColor": "#e2e8f0"
+    }
+  },
+  "sections": {
+    "hero": {
+      "enabled": true,
+      "order": 0,
+      "defaultConfig": {
+        "headline": "Your Headline Here",
+        "subheadline": "Describe what makes your project unique.",
+        "ctaPrimary": "Get Started",
+        "ctaSecondary": "Learn More"
+      }
+    },
+    "about": {
+      "enabled": true,
+      "order": 1,
+      "defaultConfig": {
+        "title": "About Us",
+        "description": "Tell your story here."
+      }
+    },
+    "features": {
+      "enabled": true,
+      "order": 2,
+      "defaultConfig": {
+        "title": "Our Features",
+        "features": [
+          { "title": "Feature One", "description": "Description here" },
+          { "title": "Feature Two", "description": "Description here" },
+          { "title": "Feature Three", "description": "Description here" }
+        ]
+      }
+    }
+  },
+  "customization": {
+    "colors": {
+      "enabled": true,
+      "variables": ["primary", "accent", "background", "text"]
+    },
+    "fonts": {
+      "enabled": true,
+      "options": ["Inter", "JetBrains Mono", "Space Grotesk"]
+    },
+    "spacing": {
+      "enabled": true,
+      "options": ["compact", "normal", "relaxed"]
+    }
+  },
+  "history": {
+    "createdAt": "2024-04-22T00:00:00.000Z",
+    "firstReleased": "2024-05-15T00:00:00.000Z",
+    "lastUpdated": "2025-02-14T00:00:00.000Z",
+    "updateCount": 23
+  },
+  "stats": {
+    "downloads": 8750,
+    "activeSites": 3420,
+    "rating": 4.9,
+    "reviewCount": 128
+  },
+  "pricing": {
+    "type": "free",
+    "plans": ["free", "pro", "enterprise"]
+  },
+  "createdAt": "2024-04-22T00:00:00.000Z",
+  "updatedAt": "2025-02-14T00:00:00.000Z"
+}

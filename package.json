@@ -1,0 +1,123 @@
+{
+  "name": "bunnyera-console",
+  "version": "2.0.0",
+  "description": "Desktop-Grade Enterprise Console for Solo Entrepreneurs",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=18.0.0",
+    "pnpm": ">=8.0.0"
+  },
+  "packageManager": "pnpm@8.14.0",
+  "scripts": {
+    "dev": "pnpm --parallel --stream dev",
+    "dev:core": "pnpm --filter bunnyera-console-core dev",
+    "dev:ui": "pnpm --filter bunnyera-console-ui dev",
+    "dev:apps": "pnpm --filter bunnyera-console-apps dev",
+    "dev:electron": "pnpm --filter bunnyera-console-electron dev",
+    "build": "node scripts/build-all.js",
+    "build:core": "pnpm --filter bunnyera-console-core build",
+    "build:ui": "pnpm --filter bunnyera-console-ui build",
+    "build:apps": "pnpm --filter bunnyera-console-apps build",
+    "build:electron": "pnpm --filter bunnyera-console-electron build",
+    "dist": "node scripts/build-all.js --dist",
+    "dist:win": "node scripts/build-all.js --dist --platform=windows",
+    "dist:mac": "node scripts/build-all.js --dist --platform=macos",
+    "dist:linux": "node scripts/build-all.js --dist --platform=linux",
+    "test": "vitest run --config tests/vitest.config.ts",
+    "test:unit": "vitest run --config tests/vitest.config.ts",
+    "test:watch": "vitest --config tests/vitest.config.ts",
+    "test:coverage": "vitest run --coverage --config tests/vitest.config.ts",
+    "test:e2e": "playwright test --config tests/playwright.config.ts",
+    "test:e2e:headed": "playwright test --headed --config tests/playwright.config.ts",
+    "test:e2e:debug": "playwright test --debug --config tests/playwright.config.ts",
+    "lint": "pnpm --parallel --stream lint",
+    "lint:fix": "pnpm --parallel --stream lint:fix",
+    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,css,md,yml,yaml}\"",
+    "format:check": "prettier --check \"**/*.{js,jsx,ts,tsx,json,css,md,yml,yaml}\"",
+    "type-check": "pnpm --parallel --stream type-check",
+    "clean": "node scripts/clean.js",
+    "clean:deps": "node scripts/clean.js --deps",
+    "clean:all": "node scripts/clean.js --all",
+    "sync-version": "node scripts/sync-version.js",
+    "prepare": "husky install",
+    "preinstall": "npx only-allow pnpm",
+    "postinstall": "pnpm build:core && pnpm build:ui",
+    "release": "pnpm build && pnpm test && pnpm dist",
+    "release:patch": "pnpm sync-version $(npm version patch --no-git-tag-version) && pnpm release",
+    "release:minor": "pnpm sync-version $(npm version minor --no-git-tag-version) && pnpm release",
+    "release:major": "pnpm sync-version $(npm version major --no-git-tag-version) && pnpm release"
+  },
+  "keywords": [
+    "desktop",
+    "electron",
+    "react",
+    "typescript",
+    "monorepo",
+    "enterprise",
+    "console",
+    "productivity",
+    "solo-entrepreneur",
+    "project-management",
+    "ai-workflows",
+    "resource-management"
+  ],
+  "author": {
+    "name": "BUNNYERA LLC",
+    "email": "hello@bunnyera.com",
+    "url": "https://bunnyera.com"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/bunnyera/bunnyera-console#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bunnyera/bunnyera-console.git"
+  },
+  "bugs": {
+    "url": "https://github.com/bunnyera/bunnyera-console/issues"
+  },
+  "workspaces": [
+    "packages/*"
+  ],
+  "devDependencies": {
+    "@playwright/test": "^1.40.0",
+    "@types/node": "^20.10.0",
+    "@typescript-eslint/eslint-plugin": "^6.13.0",
+    "@typescript-eslint/parser": "^6.13.0",
+    "@vitest/coverage-v8": "^1.0.0",
+    "eslint": "^8.54.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-import": "^2.29.0",
+    "eslint-plugin-jsx-a11y": "^6.8.0",
+    "eslint-plugin-react": "^7.33.0",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "glob": "^10.3.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^15.2.0",
+    "only-allow": "^1.2.1",
+    "prettier": "^3.1.0",
+    "typescript": "^5.3.0",
+    "vitest": "^1.0.0"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{json,css,md,yml,yaml}": [
+      "prettier --write"
+    ]
+  },
+  "pnpm": {
+    "overrides": {
+      "@types/react": "^18.2.0",
+      "@types/react-dom": "^18.2.0"
+    },
+    "peerDependencyRules": {
+      "ignoreMissing": [
+        "react",
+        "react-dom"
+      ]
+    }
+  }
+}

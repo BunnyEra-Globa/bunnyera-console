@@ -1,0 +1,321 @@
+{
+  "id": "sec_features_core",
+  "pageId": "page_home_main",
+  "type": "features",
+  "order": 2,
+  "config": {
+    "header": {
+      "title": {
+        "text": "Everything You Need.\\nNothing You Don't.",
+        "tag": "h2",
+        "style": {
+          "fontSize": "clamp(2.5rem, 5vw, 4rem)",
+          "fontWeight": "700",
+          "lineHeight": "1.2",
+          "letterSpacing": "-0.02em",
+          "color": "#e2e8f0",
+          "textAlign": "center"
+        }
+      },
+      "subtitle": {
+        "text": "A modular toolkit designed for precision creators who demand both power and elegance.",
+        "style": {
+          "fontSize": "1.25rem",
+          "lineHeight": "1.7",
+          "color": "#94a3b8",
+          "maxWidth": "600px",
+          "margin": "1.5rem auto 0",
+          "textAlign": "center"
+        }
+      },
+      "badge": {
+        "enabled": true,
+        "text": "Core Features",
+        "style": {
+          "background": "rgba(99, 102, 241, 0.1)",
+          "border": "1px solid rgba(99, 102, 241, 0.3)",
+          "color": "#a5b4fc",
+          "padding": "0.375rem 0.875rem",
+          "borderRadius": "9999px",
+          "fontSize": "0.75rem",
+          "fontWeight": "600",
+          "textTransform": "uppercase",
+          "letterSpacing": "0.05em"
+        }
+      }
+    },
+    "grid": {
+      "columns": 3,
+      "gap": "2rem",
+      "responsive": {
+        "tablet": { "columns": 2 },
+        "mobile": { "columns": 1 }
+      }
+    },
+    "features": [
+      {
+        "id": "feat_visual_editor",
+        "icon": {
+          "name": "Layout",
+          "style": {
+            "size": "24px",
+            "color": "#6366f1"
+          }
+        },
+        "iconContainer": {
+          "style": {
+            "width": "56px",
+            "height": "56px",
+            "borderRadius": "12px",
+            "background": "linear-gradient(135deg, rgba(99, 102, 241, 0.2) 0%, rgba(99, 102, 241, 0.05) 100%)",
+            "border": "1px solid rgba(99, 102, 241, 0.2)",
+            "display": "flex",
+            "alignItems": "center",
+            "justifyContent": "center",
+            "marginBottom": "1.5rem"
+          }
+        },
+        "title": "Visual Editor",
+        "description": "Drag, drop, and arrange sections with pixel-perfect precision. Real-time preview. Zero latency. Full control.",
+        "link": {
+          "label": "Explore Editor",
+          "href": "/features/editor"
+        }
+      },
+      {
+        "id": "feat_modular_sections",
+        "icon": {
+          "name": "Blocks",
+          "style": {
+            "size": "24px",
+            "color": "#a5b4fc"
+          }
+        },
+        "iconContainer": {
+          "style": {
+            "width": "56px",
+            "height": "56px",
+            "borderRadius": "12px",
+            "background": "linear-gradient(135deg, rgba(165, 180, 252, 0.2) 0%, rgba(165, 180, 252, 0.05) 100%)",
+            "border": "1px solid rgba(165, 180, 252, 0.2)",
+            "display": "flex",
+            "alignItems": "center",
+            "justifyContent": "center",
+            "marginBottom": "1.5rem"
+          }
+        },
+        "title": "Modular Sections",
+        "description": "Each section is a sovereign module. Mix, match, and customize. Hero, About, Features, Gallery, Contact—and more coming.",
+        "link": {
+          "label": "Browse Sections",
+          "href": "/features/sections"
+        }
+      },
+      {
+        "id": "feat_dark_console",
+        "icon": {
+          "name": "Terminal",
+          "style": {
+            "size": "24px",
+            "color": "#818cf8"
+          }
+        },
+        "iconContainer": {
+          "style": {
+            "width": "56px",
+            "height": "56px",
+            "borderRadius": "12px",
+            "background": "linear-gradient(135deg, rgba(129, 140, 248, 0.2) 0%, rgba(129, 140, 248, 0.05) 100%)",
+            "border": "1px solid rgba(129, 140, 248, 0.2)",
+            "display": "flex",
+            "alignItems": "center",
+            "justifyContent": "center",
+            "marginBottom": "1.5rem"
+          }
+        },
+        "title": "Dark Console UI",
+        "description": "An OS-shell aesthetic that respects your focus. Deep blacks. Soft neon accents. No distractions. Pure creation.",
+        "link": {
+          "label": "See the UI",
+          "href": "/features/design"
+        }
+      },
+      {
+        "id": "feat_instant_deploy",
+        "icon": {
+          "name": "Zap",
+          "style": {
+            "size": "24px",
+            "color": "#c4b5fd"
+          }
+        },
+        "iconContainer": {
+          "style": {
+            "width": "56px",
+            "height": "56px",
+            "borderRadius": "12px",
+            "background": "linear-gradient(135deg, rgba(196, 181, 253, 0.2) 0%, rgba(196, 181, 253, 0.05) 100%)",
+            "border": "1px solid rgba(196, 181, 253, 0.2)",
+            "display": "flex",
+            "alignItems": "center",
+            "justifyContent": "center",
+            "marginBottom": "1.5rem"
+          }
+        },
+        "title": "Instant Deploy",
+        "description": "From edit to live in under 50 milliseconds. Global CDN. Edge caching. Your site, everywhere, instantly.",
+        "link": {
+          "label": "Learn More",
+          "href": "/features/deploy"
+        }
+      },
+      {
+        "id": "feat_digital_sovereignty",
+        "icon": {
+          "name": "Shield",
+          "style": {
+            "size": "24px",
+            "color": "#6366f1"
+          }
+        },
+        "iconContainer": {
+          "style": {
+            "width": "56px",
+            "height": "56px",
+            "borderRadius": "12px",
+            "background": "linear-gradient(135deg, rgba(99, 102, 241, 0.2) 0%, rgba(99, 102, 241, 0.05) 100%)",
+            "border": "1px solid rgba(99, 102, 241, 0.2)",
+            "display": "flex",
+            "alignItems": "center",
+            "justifyContent": "center",
+            "marginBottom": "1.5rem"
+          }
+        },
+        "title": "Digital Sovereignty",
+        "description": "Own your data. Export anytime. No vendor lock-in. Custom domains. SSL included. Your site, your rules.",
+        "link": {
+          "label": "Our Promise",
+          "href": "/sovereignty"
+        }
+      },
+      {
+        "id": "feat_templates",
+        "icon": {
+          "name": "Copy",
+          "style": {
+            "size": "24px",
+            "color": "#a5b4fc"
+          }
+        },
+        "iconContainer": {
+          "style": {
+            "width": "56px",
+            "height": "56px",
+            "borderRadius": "12px",
+            "background": "linear-gradient(135deg, rgba(165, 180, 252, 0.2) 0%, rgba(165, 180, 252, 0.05) 100%)",
+            "border": "1px solid rgba(165, 180, 252, 0.2)",
+            "display": "flex",
+            "alignItems": "center",
+            "justifyContent": "center",
+            "marginBottom": "1.5rem"
+          }
+        },
+        "title": "Curated Templates",
+        "description": "Start with professionally designed templates. Customize every detail. Or build from scratch—the choice is yours.",
+        "link": {
+          "label": "View Templates",
+          "href": "/templates"
+        }
+      }
+    ],
+    "cardStyle": {
+      "background": "rgba(18, 18, 26, 0.6)",
+      "border": "1px solid #1e1e2e",
+      "borderRadius": "1rem",
+      "padding": "2rem",
+      "hover": {
+        "borderColor": "rgba(99, 102, 241, 0.4)",
+        "transform": "translateY(-4px)",
+        "boxShadow": "0 20px 40px -15px rgba(99, 102, 241, 0.2)"
+      },
+      "transition": "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)"
+    },
+    "titleStyle": {
+      "fontSize": "1.25rem",
+      "fontWeight": "600",
+      "color": "#e2e8f0",
+      "marginBottom": "0.75rem"
+    },
+    "descriptionStyle": {
+      "fontSize": "1rem",
+      "lineHeight": "1.6",
+      "color": "#64748b",
+      "marginBottom": "1.25rem"
+    },
+    "linkStyle": {
+      "fontSize": "0.875rem",
+      "fontWeight": "500",
+      "color": "#6366f1",
+      "hoverColor": "#a5b4fc"
+    },
+    "layout": {
+      "padding": {
+        "top": "8rem",
+        "bottom": "8rem",
+        "horizontal": "2rem"
+      },
+      "maxWidth": "1200px"
+    },
+    "background": {
+      "type": "gradient",
+      "value": {
+        "from": "#0a0a0f",
+        "to": "#12121a",
+        "direction": "180deg"
+      },
+      "decorations": {
+        "glowOrbs": [
+          {
+            "position": { "top": "30%", "right": "5%" },
+            "size": "500px",
+            "color": "#6366f1",
+            "opacity": 0.05,
+            "blur": "120px"
+          }
+        ]
+      }
+    },
+    "cta": {
+      "enabled": true,
+      "position": "bottom",
+      "label": "See All Features",
+      "href": "/features",
+      "style": {
+        "type": "button",
+        "variant": "outline",
+        "size": "lg"
+      }
+    }
+  },
+  "responsive": {
+    "mobile": {
+      "grid": { "columns": 1 },
+      "header": {
+        "title": { "fontSize": "2rem" },
+        "subtitle": { "fontSize": "1rem" }
+      }
+    },
+    "tablet": {
+      "grid": { "columns": 2 }
+    }
+  },
+  "analytics": {
+    "trackImpressions": true,
+    "trackCardClicks": true,
+    "trackLinkClicks": true,
+    "events": ["feature_card_hover", "feature_link_click"]
+  },
+  "createdAt": "2024-05-10T09:30:00.000Z",
+  "updatedAt": "2025-02-10T14:45:00.000Z",
+  "version": "3.2.0"
+}

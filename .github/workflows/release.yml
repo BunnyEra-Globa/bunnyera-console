@@ -1,0 +1,121 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  create-release:
+    runs-on: ubuntu-latest
+    outputs:
+      upload_url: ${{ steps.create_release.outputs.upload_url }}
+      
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Create Release
+      id: create_release
+      uses: actions/create-release@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        tag_name: ${{ github.ref }}
+        release_name: BunnyEra Console ${{ github.ref }}
+        draft: false
+        prerelease: false
+        body: |
+          ## What's Changed
+          
+          ### 🚀 Features
+          - New features and improvements
+          
+          ### 🐛 Bug Fixes
+          - Bug fixes and stability improvements
+          
+          ### 📚 Documentation
+          - Documentation updates
+          
+          **Full Changelog**: https://github.com/bunnyera/bunnyera-console/compare/v1.0.0...${{ github.ref }}
+          
+  build-electron:
+    needs: create-release
+    strategy:
+      matrix:
+        os: [macos-latest, ubuntu-latest, windows-latest]
+        
+    runs-on: ${{ matrix.os }}
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: 20.x
+        
+    - name: Setup pnpm
+      uses: pnpm/action-setup@v2
+      with:
+        version: 8
+        
+    - name: Install dependencies
+      run: pnpm install --frozen-lockfile
+      
+    - name: Build packages
+      run: pnpm build
+      
+    - name: Build Electron app (macOS)
+      if: matrix.os == 'macos-latest'
+      run: |
+        cd packages/bunnyera-console-electron
+        pnpm dist --mac
+      env:
+        CSC_IDENTITY_AUTO_DISCOVERY: false
+        
+    - name: Build Electron app (Windows)
+      if: matrix.os == 'windows-latest'
+      run: |
+        cd packages/bunnyera-console-electron
+        pnpm dist --win
+        
+    - name: Build Electron app (Linux)
+      if: matrix.os == 'ubuntu-latest'
+      run: |
+        cd packages/bunnyera-console-electron
+        pnpm dist --linux
+        
+    - name: Upload macOS artifacts
+      if: matrix.os == 'macos-latest'
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        upload_url: ${{ needs.create-release.outputs.upload_url }}
+        asset_path: packages/bunnyera-console-electron/dist/BunnyEra Console-*.dmg
+        asset_name: BunnyEra-Console-macOS.dmg
+        asset_content_type: application/octet-stream
+        
+    - name: Upload Windows artifacts
+      if: matrix.os == 'windows-latest'
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        upload_url: ${{ needs.create-release.outputs.upload_url }}
+        asset_path: packages/bunnyera-console-electron/dist/BunnyEra Console Setup *.exe
+        asset_name: BunnyEra-Console-Setup.exe
+        asset_content_type: application/octet-stream
+        
+    - name: Upload Linux artifacts
+      if: matrix.os == 'ubuntu-latest'
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        upload_url: ${{ needs.create-release.outputs.upload_url }}
+        asset_path: packages/bunnyera-console-electron/dist/BunnyEra Console-*.AppImage
+        asset_name: BunnyEra-Console.AppImage
+        asset_content_type: application/octet-stream

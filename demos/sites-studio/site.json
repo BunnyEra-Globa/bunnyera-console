@@ -1,0 +1,83 @@
+{
+  "id": "site_bunny_landing_v3",
+  "name": "BunnyEra Landing",
+  "slug": "bunnyera-landing",
+  "description": "The official showcase site for BunnyEra Sites Studio — a visual website builder that transforms ideas into digital sovereignty through modular creation.",
+  "status": "published",
+  "visibility": "public",
+  "version": "3.2.1",
+  "tags": ["showcase", "official", "landing-page", "template"],
+  "metadata": {
+    "title": "BunnyEra Sites Studio — Build Without Limits",
+    "description": "Visual website builder for creators who demand precision, modularity, and digital sovereignty.",
+    "keywords": ["website builder", "no-code", "visual editor", "modular", "dark theme"],
+    "ogImage": "https://bunnyera.studio/og/landing-v3.jpg"
+  },
+  "customDomain": null,
+  "sslEnabled": true,
+  "cdnEnabled": true,
+  "analytics": {
+    "provider": "bunnyera-analytics",
+    "trackingId": "BA-2024-LANDING-001"
+  },
+  "settings": {
+    "favicon": "/assets/favicon-dark.svg",
+    "primaryColor": "#6366f1",
+    "accentColor": "#a5b4fc",
+    "backgroundColor": "#0a0a0f",
+    "fontFamily": "Inter",
+    "codeFontFamily": "JetBrains Mono"
+  },
+  "history": {
+    "createdAt": "2024-04-22T14:30:00.000Z",
+    "firstPublishedAt": "2024-05-15T10:00:00.000Z",
+    "lastPublishedAt": "2025-02-14T16:22:00.000Z",
+    "lastModifiedAt": "2025-02-16T09:30:00.000Z",
+    "publishCount": 47,
+    "revisionCount": 128
+  },
+  "milestones": [
+    {
+      "date": "2024-04-22T14:30:00.000Z",
+      "event": "site_created",
+      "note": "Initial prototype created during BunnyEra hackathon"
+    },
+    {
+      "date": "2024-05-15T10:00:00.000Z",
+      "event": "first_published",
+      "note": "Alpha release — shared with early adopters"
+    },
+    {
+      "date": "2024-07-08T11:45:00.000Z",
+      "event": "major_redesign",
+      "note": "Beta v2.0 — introduced OS-shell aesthetic"
+    },
+    {
+      "date": "2024-09-20T09:00:00.000Z",
+      "event": "template_released",
+      "note": "BunnyEra Landing template made public"
+    },
+    {
+      "date": "2024-12-01T00:00:00.000Z",
+      "event": "production_ready",
+      "note": "v3.0 — Production release with full feature set"
+    },
+    {
+      "date": "2025-02-14T16:22:00.000Z",
+      "event": "latest_update",
+      "note": "v3.2.1 — Performance optimizations and new neon accents"
+    }
+  ],
+  "pages": [
+    {
+      "id": "page_home_main",
+      "name": "Home",
+      "slug": "",
+      "isHome": true,
+      "sections": ["sec_hero_main", "sec_about_story", "sec_features_core"]
+    }
+  ],
+  "userId": "usr_bunny_001_demo",
+  "createdAt": "2024-04-22T14:30:00.000Z",
+  "updatedAt": "2025-02-16T09:30:00.000Z"
+}

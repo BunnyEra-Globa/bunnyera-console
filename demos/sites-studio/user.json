@@ -1,0 +1,26 @@
+{
+  "id": "usr_bunny_001_demo",
+  "email": "alex.chen@bunnyera.studio",
+  "name": "Alex Chen",
+  "avatar": "https://api.dicebear.com/7.x/avataaars/svg?seed=AlexChen&backgroundColor=b6e3f4",
+  "role": "founder",
+  "preferences": {
+    "theme": "dark",
+    "editorLayout": "split",
+    "autoSave": true,
+    "defaultTemplate": "bunnyera-landing"
+  },
+  "subscription": {
+    "plan": "pro",
+    "startedAt": "2024-04-22T00:00:00.000Z",
+    "renewsAt": "2025-04-22T00:00:00.000Z"
+  },
+  "stats": {
+    "totalSites": 12,
+    "publishedSites": 8,
+    "totalViews": 154320,
+    "lastLogin": "2025-02-16T08:45:22.000Z"
+  },
+  "createdAt": "2024-04-22T09:15:33.000Z",
+  "updatedAt": "2025-02-16T08:45:22.000Z"
+}

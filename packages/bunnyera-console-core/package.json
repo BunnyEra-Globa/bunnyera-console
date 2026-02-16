@@ -1,0 +1,31 @@
+{
+  "name": "bunnyera-console-core",
+  "version": "0.1.0",
+  "description": "BunnyEra Console Core - 企业控制台核心逻辑层",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "clean": "rm -rf dist",
+    "prepublishOnly": "npm run clean && npm run build"
+  },
+  "keywords": [
+    "console",
+    "core",
+    "enterprise",
+    "bunnyera",
+    "typescript"
+  ],
+  "author": "BunnyEra Team",
+  "license": "MIT",
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.3.0"
+  }
+}

@@ -1,0 +1,172 @@
+{
+  "id": "sec_hero_main",
+  "pageId": "page_home_main",
+  "type": "hero",
+  "order": 0,
+  "config": {
+    "headline": {
+      "text": "Build in the Dark.\\nShine in the Light.",
+      "tag": "h1",
+      "style": {
+        "fontSize": "clamp(3rem, 8vw, 6rem)",
+        "fontWeight": "800",
+        "lineHeight": "1.1",
+        "letterSpacing": "-0.03em",
+        "gradient": {
+          "enabled": true,
+          "from": "#e2e8f0",
+          "to": "#a5b4fc",
+          "direction": "135deg"
+        }
+      }
+    },
+    "subheadline": {
+      "text": "BunnyEra Sites Studio is the visual builder for creators who demand precision. Modular sections. Console-native aesthetics. Complete digital sovereignty.",
+      "style": {
+        "fontSize": "1.25rem",
+        "fontWeight": "400",
+        "lineHeight": "1.7",
+        "color": "#94a3b8",
+        "maxWidth": "640px"
+      }
+    },
+    "cta": {
+      "primary": {
+        "label": "Start Building Free",
+        "href": "/signup",
+        "style": {
+          "background": "linear-gradient(135deg, #6366f1 0%, #818cf8 100%)",
+          "color": "#ffffff",
+          "padding": "1rem 2rem",
+          "borderRadius": "0.75rem",
+          "fontWeight": "600",
+          "boxShadow": "0 0 30px rgba(99, 102, 241, 0.4)",
+          "hover": {
+            "transform": "translateY(-2px)",
+            "boxShadow": "0 0 50px rgba(99, 102, 241, 0.6)"
+          }
+        }
+      },
+      "secondary": {
+        "label": "View Templates",
+        "href": "#templates",
+        "style": {
+          "background": "transparent",
+          "border": "1px solid #1e1e2e",
+          "color": "#e2e8f0",
+          "padding": "1rem 2rem",
+          "borderRadius": "0.75rem",
+          "fontWeight": "500",
+          "hover": {
+            "borderColor": "#6366f1",
+            "background": "rgba(99, 102, 241, 0.1)"
+          }
+        }
+      }
+    },
+    "alignment": "center",
+    "layout": {
+      "minHeight": "100vh",
+      "padding": {
+        "top": "8rem",
+        "bottom": "6rem",
+        "horizontal": "2rem"
+      },
+      "display": "flex",
+      "flexDirection": "column",
+      "justifyContent": "center",
+      "alignItems": "center"
+    },
+    "background": {
+      "type": "gradient",
+      "value": {
+        "from": "#0a0a0f",
+        "to": "#12121a",
+        "direction": "180deg"
+      },
+      "overlay": {
+        "enabled": true,
+        "type": "grid",
+        "opacity": 0.03,
+        "color": "#6366f1"
+      },
+      "particles": {
+        "enabled": true,
+        "count": 25,
+        "color": "#6366f1",
+        "opacity": 0.15,
+        "size": {
+          "min": 1,
+          "max": 3
+        },
+        "animation": {
+          "enabled": true,
+          "speed": 0.5
+        }
+      }
+    },
+    "decorations": {
+      "glowOrbs": [
+        {
+          "position": { "top": "20%", "left": "10%" },
+          "size": "400px",
+          "color": "#6366f1",
+          "opacity": 0.08,
+          "blur": "100px"
+        },
+        {
+          "position": { "bottom": "10%", "right": "15%" },
+          "size": "300px",
+          "color": "#a5b4fc",
+          "opacity": 0.06,
+          "blur": "80px"
+        }
+      ],
+      "terminalLines": {
+        "enabled": true,
+        "count": 3,
+        "color": "#1e1e2e",
+        "opacity": 0.5
+      }
+    },
+    "badge": {
+      "enabled": true,
+      "text": "✨ Now with AI-Powered Design Assistant",
+      "style": {
+        "background": "rgba(99, 102, 241, 0.1)",
+        "border": "1px solid rgba(99, 102, 241, 0.3)",
+        "color": "#a5b4fc",
+        "padding": "0.5rem 1rem",
+        "borderRadius": "9999px",
+        "fontSize": "0.875rem",
+        "fontWeight": "500"
+      }
+    }
+  },
+  "responsive": {
+    "mobile": {
+      "headline": {
+        "fontSize": "2.5rem"
+      },
+      "subheadline": {
+        "fontSize": "1rem"
+      },
+      "cta": {
+        "layout": "stack"
+      }
+    },
+    "tablet": {
+      "headline": {
+        "fontSize": "3.5rem"
+      }
+    }
+  },
+  "analytics": {
+    "trackClicks": true,
+    "trackImpressions": true,
+    "events": ["cta_primary_click", "cta_secondary_click"]
+  },
+  "createdAt": "2024-04-22T14:40:00.000Z",
+  "updatedAt": "2025-02-16T09:30:00.000Z",
+  "version": "3.2.0"
+}

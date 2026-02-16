@@ -1,0 +1,105 @@
+{
+  "manifestVersion": "1.0.0",
+  "demoName": "BunnyEra Sites Studio — Official Demo Dataset",
+  "description": "A production-quality demo dataset showcasing the evolution of BunnyEra from April 22, 2024 to present. Includes user profile, site configuration, page structure, and modular sections.",
+  "createdAt": "2025-02-16T12:00:00.000Z",
+  "author": "BunnyEra Studio Team",
+  "timeline": {
+    "startDate": "2024-04-22T00:00:00.000Z",
+    "endDate": "2025-02-16T23:59:59.000Z",
+    "duration": "301 days",
+    "milestones": 6
+  },
+  "contents": {
+    "users": [
+      {
+        "file": "user.json",
+        "id": "usr_bunny_001_demo",
+        "name": "Alex Chen",
+        "role": "founder"
+      }
+    ],
+    "sites": [
+      {
+        "file": "site.json",
+        "id": "site_bunny_landing_v3",
+        "name": "BunnyEra Landing",
+        "status": "published",
+        "version": "3.2.1"
+      }
+    ],
+    "pages": [
+      {
+        "file": "pages/home.json",
+        "id": "page_home_main",
+        "name": "Home",
+        "isHome": true
+      }
+    ],
+    "sections": [
+      {
+        "file": "sections/hero.json",
+        "id": "sec_hero_main",
+        "type": "hero",
+        "order": 0
+      },
+      {
+        "file": "sections/about.json",
+        "id": "sec_about_story",
+        "type": "about",
+        "order": 1
+      },
+      {
+        "file": "sections/features.json",
+        "id": "sec_features_core",
+        "type": "features",
+        "order": 2
+      }
+    ],
+    "templates": [
+      {
+        "file": "templates/bunnyera-landing.json",
+        "id": "tpl_bunnyera_landing_v3",
+        "name": "BunnyEra Landing",
+        "category": "landing"
+      }
+    ]
+  },
+  "brand": {
+    "name": "BunnyEra",
+    "tagline": "Build Without Limits",
+    "philosophy": "Modular creation. Digital sovereignty. OS-shell aesthetic.",
+    "colors": {
+      "background": "#0a0a0f",
+      "panel": "#12121a",
+      "border": "#1e1e2e",
+      "primary": "#6366f1",
+      "accent": "#a5b4fc",
+      "text": "#e2e8f0",
+      "muted": "#64748b"
+    },
+    "fonts": {
+      "primary": "Inter",
+      "mono": "JetBrains Mono"
+    }
+  },
+  "importInstructions": {
+    "order": ["user", "site", "pages", "sections", "templates"],
+    "dependencies": {
+      "site": ["user"],
+      "pages": ["site"],
+      "sections": ["pages"],
+      "templates": []
+    },
+    "notes": [
+      "Timestamps are preserved to maintain historical accuracy",
+      "Section order determines visual layout (0 = first)",
+      "Template can be applied to new sites after import"
+    ]
+  },
+  "validation": {
+    "schemaVersion": "3.2.1",
+    "compatibleWith": ["bunnyera-api@3.x", "bunnyera-web@3.x"],
+    "testedOn": "2025-02-16"
+  }
+}

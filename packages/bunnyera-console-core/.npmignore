@@ -1,0 +1,39 @@
+# Source files (only dist is needed)
+src/
+examples/
+
+# Development
+.git/
+.gitignore
+.vscode/
+.idea/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+
+# Dependencies
+node_modules/
+
+# Test coverage
+coverage/
+.nyc_output/
+
+# Environment
+.env
+.env.local
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+
+# TypeScript
+*.tsbuildinfo
+tsconfig.json
+
+# CI/CD
+.github/
+.travis.yml
+.gitlab-ci.yml

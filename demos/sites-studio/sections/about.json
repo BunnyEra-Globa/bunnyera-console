@@ -1,0 +1,203 @@
+{
+  "id": "sec_about_story",
+  "pageId": "page_home_main",
+  "type": "about",
+  "order": 1,
+  "config": {
+    "title": {
+      "text": "Born in the Console.\\nBuilt for Creators.",
+      "tag": "h2",
+      "style": {
+        "fontSize": "clamp(2.5rem, 5vw, 4rem)",
+        "fontWeight": "700",
+        "lineHeight": "1.2",
+        "letterSpacing": "-0.02em",
+        "color": "#e2e8f0"
+      }
+    },
+    "subtitle": {
+      "text": "Our Philosophy",
+      "style": {
+        "fontSize": "0.875rem",
+        "fontWeight": "600",
+        "textTransform": "uppercase",
+        "letterSpacing": "0.1em",
+        "color": "#6366f1",
+        "marginBottom": "1rem"
+      }
+    },
+    "description": {
+      "paragraphs": [
+        "BunnyEra was forged in the belief that creation should feel like commanding a terminal—precise, powerful, and infinitely modular. We rejected the cluttered, bloated builders of the past. In their place, we built an OS-shell aesthetic that respects your craft.",
+        "Every section is a module. Every module is sovereign. Drag, drop, and deploy with the confidence of a developer and the vision of a designer. No code required. No limits imposed.",
+        "From the neon-accented dark console to the soft glow of our UI components, every pixel serves a purpose. This is digital sovereignty—your ideas, your rules, your domain."
+      ],
+      "style": {
+        "fontSize": "1.125rem",
+        "lineHeight": "1.8",
+        "color": "#94a3b8",
+        "maxWidth": "540px"
+      }
+    },
+    "media": {
+      "type": "image",
+      "src": "/assets/bunnyera-workspace-dark.jpg",
+      "alt": "BunnyEra Studio workspace showing the visual editor with dark console aesthetic",
+      "position": "right",
+      "aspectRatio": "4/3",
+      "style": {
+        "borderRadius": "1rem",
+        "border": "1px solid #1e1e2e",
+        "boxShadow": "0 25px 50px -12px rgba(0, 0, 0, 0.5)"
+      },
+      "overlay": {
+        "enabled": true,
+        "gradient": {
+          "direction": "to right",
+          "from": "transparent",
+          "to": "rgba(10, 10, 15, 0.8)"
+        }
+      },
+      "decorations": {
+        "glow": {
+          "enabled": true,
+          "color": "#6366f1",
+          "opacity": 0.15,
+          "blur": "60px",
+          "offset": { "x": "-20px", "y": "20px" }
+        },
+        "cornerAccent": {
+          "enabled": true,
+          "position": "top-right",
+          "size": "60px",
+          "color": "#6366f1"
+        }
+      }
+    },
+    "stats": {
+      "enabled": true,
+      "items": [
+        {
+          "value": "10K+",
+          "label": "Sites Created",
+          "description": "By creators worldwide"
+        },
+        {
+          "value": "99.9%",
+          "label": "Uptime",
+          "description": "Enterprise reliability"
+        },
+        {
+          "value": "<50ms",
+          "label": "Deploy Time",
+          "description": "From edit to live"
+        }
+      ],
+      "style": {
+        "layout": "horizontal",
+        "divider": true,
+        "valueStyle": {
+          "fontSize": "2rem",
+          "fontWeight": "700",
+          "color": "#6366f1",
+          "fontFamily": "JetBrains Mono"
+        },
+        "labelStyle": {
+          "fontSize": "0.875rem",
+          "fontWeight": "500",
+          "color": "#e2e8f0"
+        },
+        "descriptionStyle": {
+          "fontSize": "0.75rem",
+          "color": "#64748b"
+        }
+      }
+    },
+    "cta": {
+      "enabled": true,
+      "label": "Read Our Story",
+      "href": "/about",
+      "style": {
+        "type": "link",
+        "color": "#6366f1",
+        "hoverColor": "#a5b4fc",
+        "icon": "arrow-right"
+      }
+    },
+    "layout": {
+      "type": "split",
+      "contentWidth": "45%",
+      "mediaWidth": "50%",
+      "gap": "5%",
+      "verticalAlign": "center",
+      "padding": {
+        "top": "8rem",
+        "bottom": "8rem",
+        "horizontal": "2rem"
+      },
+      "maxWidth": "1200px"
+    },
+    "background": {
+      "type": "solid",
+      "value": "#0a0a0f",
+      "decorations": {
+        "gridLines": {
+          "enabled": true,
+          "color": "#1e1e2e",
+          "opacity": 0.3,
+          "spacing": "40px"
+        }
+      }
+    },
+    "timeline": {
+      "enabled": true,
+      "events": [
+        {
+          "date": "2024-04-22",
+          "title": "The Spark",
+          "description": "BunnyEra conceived during a late-night hackathon"
+        },
+        {
+          "date": "2024-07-08",
+          "title": "Beta Release",
+          "description": "OS-shell aesthetic introduced to 500 early adopters"
+        },
+        {
+          "date": "2024-12-01",
+          "title": "Production Launch",
+          "description": "v3.0 ships with full feature set and enterprise support"
+        },
+        {
+          "date": "2025-02-16",
+          "title": "Today",
+          "description": "10,000+ creators building with BunnyEra"
+        }
+      ]
+    }
+  },
+  "responsive": {
+    "mobile": {
+      "layout": {
+        "type": "stack",
+        "mediaPosition": "top"
+      },
+      "stats": {
+        "layout": "vertical"
+      }
+    },
+    "tablet": {
+      "layout": {
+        "contentWidth": "50%",
+        "mediaWidth": "45%"
+      }
+    }
+  },
+  "analytics": {
+    "trackImpressions": true,
+    "trackCtaClicks": true,
+    "trackStatsVisibility": true
+  },
+  "createdAt": "2024-04-22T15:00:00.000Z",
+  "updatedAt": "2025-02-14T11:20:00.000Z",
+  "version": "3.1.0"
+}

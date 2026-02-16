@@ -1,0 +1,43 @@
+{
+  "name": "bunnyera-console-apps",
+  "version": "1.0.0",
+  "description": "BunnyEra Console 内部应用集合 - 包含 Dashboard、Projects、Resources、AIHub、LogCenter、Notes、Settings 等应用模块",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc && vite build",
+    "dev": "vite",
+    "lint": "eslint src --ext .ts,.tsx",
+    "type-check": "tsc --noEmit"
+  },
+  "keywords": [
+    "bunnyera",
+    "console",
+    "apps",
+    "dashboard",
+    "react",
+    "typescript"
+  ],
+  "author": "BunnyEra Team",
+  "license": "MIT",
+  "peerDependencies": {
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.0",
+    "@types/react-dom": "^18.2.0",
+    "@vitejs/plugin-react": "^4.2.0",
+    "typescript": "^5.3.0",
+    "vite": "^5.0.0",
+    "vite-plugin-dts": "^3.6.0"
+  },
+  "dependencies": {
+    "bunnyera-console-ui": "workspace:*",
+    "bunnyera-console-core": "workspace:*"
+  }
+}
