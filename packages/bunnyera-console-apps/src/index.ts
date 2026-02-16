@@ -1,8 +1,8 @@
 // ============================================
-// bunnyera-console-apps - 入口文件
+// bunnyera-console-apps - 入口文件（品牌规范版）
 // ============================================
 // BunnyEra Console 内部应用集合
-// 包含 Dashboard、Projects、Resources、AIHub、LogCenter、Notes、Settings 等应用模块
+// 每个 App 都是运行在 bunnyera-console-ui 布局中的独立模块
 // ============================================
 
 // --------------------------------------------
@@ -40,52 +40,48 @@ export { mockApi } from './core';
 // --------------------------------------------
 
 export type {
-  // 通用类型
   BaseEntity,
   Status,
-  
-  // Dashboard 类型
   DashboardStats,
   RecentActivity,
   ResourceStat,
-  
-  // Project 类型
   Project,
   ProjectDetail,
-  
-  // Resource 类型
   Resource,
   ResourceGroup,
   ResourceType,
-  
-  // AIHub 类型
   Agent,
   ChatSession,
   ChatMessage,
-  
-  // Log 类型
   LogEntry,
   LogLevel,
-  
-  // Note 类型
   Note,
-  
-  // Settings 类型
   Settings,
 } from './types';
 
 // --------------------------------------------
-// 应用注册信息（用于动态加载）
+// 应用注册类型（品牌规范版）
 // --------------------------------------------
 
 export interface AppRegistryItem {
   id: string;
   name: string;
   description: string;
-  icon: string;
+  icon: string; // 统一 icon 名称，不使用 emoji
   component: React.ComponentType<any>;
   path: string;
+
+  // BunnyEra Console 品牌要求字段
+  category: 'workspace' | 'system' | 'ai' | 'resources' | 'logs' | 'notes';
+  order: number;
+  keepAlive?: boolean;
+  permissions?: string[];
+  layout?: 'default' | 'full' | 'minimal';
 }
+
+// --------------------------------------------
+// 导入应用组件
+// --------------------------------------------
 
 import { DashboardApp } from './apps/DashboardApp';
 import { ProjectsApp } from './apps/ProjectsApp';
@@ -95,79 +91,99 @@ import { LogCenterApp } from './apps/LogCenterApp';
 import { NotesApp } from './apps/NotesApp';
 import { SettingsApp } from './apps/SettingsApp';
 
-/**
- * 应用注册表
- * 用于在 bunnyera-console-ui 中动态注册和加载应用
- */
+// --------------------------------------------
+// 应用注册表（品牌规范版）
+// icon 字段必须使用统一 icon 名称，不使用 emoji
+// --------------------------------------------
+
 export const appRegistry: AppRegistryItem[] = [
   {
     id: 'dashboard',
     name: '控制台',
     description: '系统总览和关键指标',
-    icon: '📊',
+    icon: 'dashboard',
     component: DashboardApp,
     path: '/dashboard',
+    category: 'workspace',
+    order: 1,
+    keepAlive: true,
   },
   {
     id: 'projects',
     name: '项目',
     description: '项目管理和跟踪',
-    icon: '📁',
+    icon: 'projects',
     component: ProjectsApp,
     path: '/projects',
+    category: 'workspace',
+    order: 2,
+    keepAlive: true,
   },
   {
     id: 'resources',
     name: '资源',
     description: '资源文件管理',
-    icon: '📦',
+    icon: 'resources',
     component: ResourcesApp,
     path: '/resources',
+    category: 'resources',
+    order: 3,
+    keepAlive: true,
   },
   {
     id: 'aihub',
     name: 'AI 助手',
     description: 'AI 对话和工作流',
-    icon: '🤖',
+    icon: 'ai',
     component: AIHubApp,
     path: '/aihub',
+    category: 'ai',
+    order: 4,
+    layout: 'full',
+    keepAlive: true,
   },
   {
     id: 'logs',
     name: '日志',
     description: '系统日志和分析',
-    icon: '📋',
+    icon: 'logs',
     component: LogCenterApp,
     path: '/logs',
+    category: 'logs',
+    order: 5,
   },
   {
     id: 'notes',
     name: '笔记',
     description: '个人笔记和备忘',
-    icon: '📝',
+    icon: 'notes',
     component: NotesApp,
     path: '/notes',
+    category: 'notes',
+    order: 6,
+    keepAlive: true,
   },
   {
     id: 'settings',
     name: '设置',
     description: '系统设置和偏好',
-    icon: '⚙️',
+    icon: 'settings',
     component: SettingsApp,
     path: '/settings',
+    category: 'system',
+    order: 99,
+    layout: 'minimal',
   },
 ];
 
-/**
- * 根据 ID 获取应用组件
- */
+// --------------------------------------------
+// 工具函数
+// --------------------------------------------
+
 export function getAppById(id: string): AppRegistryItem | undefined {
   return appRegistry.find(app => app.id === id);
 }
 
-/**
- * 根据路径获取应用组件
- */
 export function getAppByPath(path: string): AppRegistryItem | undefined {
   return appRegistry.find(app => app.path === path);
 }
