@@ -1,60 +1,47 @@
 # bunnyera-console-apps
 
-BunnyEra Console 的内部应用集合。每个 App 都是运行在 `bunnyera-console-ui` 布局中的一个页面模块。
+A collection of internal applications for the BunnyEra Console. Each app is a page module rendered inside the `bunnyera-console-ui` layout.
 
-## 📦 安装
+## 📦 Installation
 
 ```bash
 npm install bunnyera-console-apps
-# 或
+# or
 yarn add bunnyera-console-apps
-# 或
+# or
 pnpm add bunnyera-console-apps
-```
-
-## 📋 包含的应用
-
-| 应用 | 组件名 | 描述 |
-|------|--------|------|
-| Dashboard | `DashboardApp` | 控制台总览，显示项目数量、错误数量、最近活动、资源统计 |
-| Projects | `ProjectsApp` | 项目中心，项目列表、筛选、详情面板 |
-| Resources | `ResourcesApp` | 资源中心，按类型分组、搜索、详情面板 |
-| AIHub | `AIHubApp` | AI 工作中心，Chat 界面、Agent 选择 |
-| LogCenter | `LogCenterApp` | 日志中心，日志列表、级别筛选、错误查看 |
-| Notes | `NotesApp` | 笔记，列表+编辑、创建/编辑/删除 |
-| Settings | `SettingsApp` | 设置，主题、语言、快捷键、通知等 |
-
-## 🚀 快速开始
-
-### 导入单个应用
-
-```tsx
+📋 Included Applications
+App	Component	Description
+Dashboard	DashboardApp	Console overview showing project count, error count, recent activity, and resource statistics
+Projects	ProjectsApp	Project center with list view, filters, and detail panel
+Resources	ResourcesApp	Resource center with grouped view, search, and detail panel
+AIHub	AIHubApp	AI workspace with chat interface and agent selection
+LogCenter	LogCenterApp	Log center with level filters and error inspection
+Notes	NotesApp	Notes app with list, edit, create/delete features
+Settings	SettingsApp	Settings for theme, language, shortcuts, notifications, and more
+🚀 Quick Start
+Import a single app
+tsx
 import { DashboardApp } from 'bunnyera-console-apps';
 
 function MyPage() {
   return <DashboardApp />;
 }
-```
-
-### 使用应用注册表
-
-```tsx
+Using the app registry
+tsx
 import { appRegistry, getAppById } from 'bunnyera-console-apps';
 
-// 获取所有应用
+// Get all apps
 console.log(appRegistry);
 
-// 根据 ID 获取应用
+// Get app by ID
 const dashboardApp = getAppById('dashboard');
 
-// 渲染应用
+// Render the app
 const AppComponent = dashboardApp?.component;
 return <AppComponent />;
-```
-
-### 动态路由示例
-
-```tsx
+Dynamic routing example
+tsx
 import { appRegistry } from 'bunnyera-console-apps';
 import { Routes, Route } from 'react-router-dom';
 
@@ -71,99 +58,74 @@ function AppRoutes() {
     </Routes>
   );
 }
-```
+📖 API Documentation
+DashboardApp
+Console overview app showing key metrics and recent activity.
 
-## 📖 API 文档
-
-### DashboardApp
-
-控制台总览应用，显示关键指标和最近活动。
-
-```tsx
+tsx
 interface DashboardAppProps {
   className?: string;
 }
 
 <DashboardApp className="my-dashboard" />
-```
+ProjectsApp
+Project center app with list view, filtering, and detail view.
 
-### ProjectsApp
-
-项目中心应用，支持项目列表、筛选和详情查看。
-
-```tsx
+tsx
 interface ProjectsAppProps {
   className?: string;
 }
 
 <ProjectsApp className="my-projects" />
-```
+ResourcesApp
+Resource center app with grouped display and search support.
 
-### ResourcesApp
-
-资源中心应用，按类型分组显示资源，支持搜索。
-
-```tsx
+tsx
 interface ResourcesAppProps {
   className?: string;
 }
 
 <ResourcesApp className="my-resources" />
-```
+AIHubApp
+AI workspace app providing chat interface and agent selection.
 
-### AIHubApp
-
-AI 工作中心应用，提供 Chat 界面和 Agent 选择。
-
-```tsx
+tsx
 interface AIHubAppProps {
   className?: string;
 }
 
 <AIHubApp className="my-aihub" />
-```
+LogCenterApp
+Log center app with level filtering and error inspection.
 
-### LogCenterApp
-
-日志中心应用，支持级别筛选和错误查看。
-
-```tsx
+tsx
 interface LogCenterAppProps {
   className?: string;
 }
 
 <LogCenterApp className="my-logs" />
-```
+NotesApp
+Notes app supporting create, edit, delete (stored in memory).
 
-### NotesApp
-
-笔记应用，支持创建、编辑、删除笔记（前端内存存储）。
-
-```tsx
+tsx
 interface NotesAppProps {
   className?: string;
 }
 
 <NotesApp className="my-notes" />
-```
+SettingsApp
+Settings app including theme, language, shortcuts, notifications, and more.
 
-### SettingsApp
-
-设置应用，包含主题、语言、快捷键、通知等设置。
-
-```tsx
+tsx
 interface SettingsAppProps {
   className?: string;
 }
 
 <SettingsApp className="my-settings" />
-```
+🔧 Mock API
+This package uses the bunnyera-console-core Mock API for data interactions.
 
-## 🔧 Mock API
-
-本包使用 `bunnyera-console-core` 提供的 Mock API 进行数据交互。
-
-```tsx
+tsx
 import { mockApi } from 'bunnyera-console-apps';
 
 // Dashboard
@@ -188,75 +150,64 @@ const errors = await mockApi.logs.getRecentErrors(5);
 
 // Notes
 const notes = await mockApi.notes.getList();
-const newNote = await mockApi.notes.create({ title: '新笔记', content: '' });
+const newNote = await mockApi.notes.create({ title: 'New Note', content: '' });
 
 // Settings
 const settings = await mockApi.settings.get();
 await mockApi.settings.update({ theme: 'dark' });
-```
-
-## 🏗️ 项目结构
-
-```
+🏗️ Project Structure
+text
 bunnyera-console-apps/
 ├── src/
 │   ├── apps/
-│   │   ├── DashboardApp/      # 控制台总览
-│   │   ├── ProjectsApp/       # 项目中心
-│   │   ├── ResourcesApp/      # 资源中心
-│   │   ├── AIHubApp/          # AI 工作中心
-│   │   ├── LogCenterApp/      # 日志中心
-│   │   ├── NotesApp/          # 笔记
-│   │   └── SettingsApp/       # 设置
+│   │   ├── DashboardApp/      # Console overview
+│   │   ├── ProjectsApp/       # Project center
+│   │   ├── ResourcesApp/      # Resource center
+│   │   ├── AIHubApp/          # AI workspace
+│   │   ├── LogCenterApp/      # Log center
+│   │   ├── NotesApp/          # Notes
+│   │   └── SettingsApp/       # Settings
 │   ├── core/
-│   │   ├── mockApi.ts         # Mock API 实现
-│   │   └── index.ts           # Core 入口
+│   │   ├── mockApi.ts         # Mock API implementation
+│   │   └── index.ts           # Core entry
 │   ├── types/
-│   │   └── index.ts           # TypeScript 类型定义
-│   └── index.ts               # 包入口
+│   │   └── index.ts           # TypeScript type definitions
+│   └── index.ts               # Package entry
 ├── package.json
 ├── tsconfig.json
 ├── vite.config.ts
 └── README.md
-```
-
-## 🛠️ 开发
-
-```bash
-# 安装依赖
+🛠️ Development
+bash
+# Install dependencies
 npm install
 
-# 开发模式
+# Development mode
 npm run dev
 
-# 构建
+# Build
 npm run build
 
-# 类型检查
+# Type check
 npm run type-check
 
-# 代码检查
+# Lint
 npm run lint
-```
+📄 Dependencies
+Peer Dependencies
+react: ^18.0.0
 
-## 📄 依赖
+react-dom: ^18.0.0
 
-### Peer Dependencies
-- `react`: ^18.0.0
-- `react-dom`: ^18.0.0
+Dependencies
+bunnyera-console-ui: Layout components (workspace)
 
-### Dependencies
-- `bunnyera-console-ui`: 布局组件（workspace）
-- `bunnyera-console-core`: 逻辑核心（workspace）
+bunnyera-console-core: Logic core (workspace)
 
-## 📝 许可证
-
+📝 License
 MIT License
 
-## 🤝 贡献
-
-欢迎提交 Issue 和 Pull Request！
-
----
+🤝 Contributing
+Issues and pull requests are welcome!
 
 Made with ❤️ by BunnyEra Team
