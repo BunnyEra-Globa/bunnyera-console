@@ -16,13 +16,19 @@ Core runtime layer for BunnyEra Console.
 
 ## Installation
 
+```bash
 pnpm add bunnyera-console-core
+```
 
-Build
+## Build
+
+```bash
 pnpm --filter bunnyera-console-core build
+```
 
-Usage in Electron Main Process
+## Usage in Electron Main Process
 
+```typescript
 import { app, BrowserWindow, ipcMain } from "electron";
 import { registerCoreIpcHandlers } from "bunnyera-console-core";
 
@@ -39,8 +45,11 @@ app.whenReady().then(() => {
   registerCoreIpcHandlers(ipcMain);
   createWindow();
 });
+```
 
-Preload Script (preload.ts)
+## Preload Script (preload.ts)
+
+```typescript
 import { contextBridge, ipcRenderer } from "electron";
 
 contextBridge.exposeInMainWorld("core", {
@@ -59,9 +68,11 @@ contextBridge.exposeInMainWorld("core", {
   aiChat: (messages: { role: string; content: string }[]) =>
     ipcRenderer.invoke("core:aiChat", messages)
 });
+```
 
-Renderer Usage (UI)
+## Renderer Usage (UI)
 
+```typescript
 // TypeScript type definition
 declare global {
   interface Window {
@@ -89,22 +100,27 @@ export async function fetchLogs(limit = 200) {
 export async function sendAIChat(messages: AIMessage[]) {
   return window.core.aiChat(messages);
 }
+```
 
-Available IPC Channels
-Channel	Description
-core:getSystemInfo	Get system information (CPU, memory, OS, versions)
-core:getLogs	Get logs with optional limit
-core:clearLogs	Clear all logs
-core:writeLog	Write a log entry
-core:getConfig	Get current configuration
-core:saveConfig	Save configuration
-core:listDirectory	List directory contents
-core:readTextFile	Read text file content
-core:writeTextFile	Write text file
-core:deletePath	Delete file or directory
-core:aiChat	Send AI chat messages
-Configuration Schema
-TypeScript
+## Available IPC Channels
+
+| Channel | Description |
+| --- | --- |
+| core:getSystemInfo | Get system information (CPU, memory, OS, versions) |
+| core:getLogs | Get logs with optional limit |
+| core:clearLogs | Clear all logs |
+| core:writeLog | Write a log entry |
+| core:getConfig | Get current configuration |
+| core:saveConfig | Save configuration |
+| core:listDirectory | List directory contents |
+| core:readTextFile | Read text file content |
+| core:writeTextFile | Write text file |
+| core:deletePath | Delete file or directory |
+| core:aiChat | Send AI chat messages |
+
+## Configuration Schema
+
+```typescript
 {
   language: "en" | "zh-CN",
   theme: "dark" | "light",
@@ -115,9 +131,13 @@ TypeScript
     model: string
   }
 }
-AI Providers
-OpenAI
-JSON
+```
+
+## AI Providers
+
+### OpenAI
+
+```json
 {
   "ai": {
     "provider": "openai",
@@ -125,8 +145,11 @@ JSON
     "model": "gpt-4o-mini"
   }
 }
-Azure OpenAI
-JSON
+```
+
+### Azure OpenAI
+
+```json
 {
   "ai": {
     "provider": "azure",
@@ -135,8 +158,11 @@ JSON
     "model": "gpt-4"
   }
 }
-DeepSeek
-JSON
+```
+
+### DeepSeek
+
+```json
 {
   "ai": {
     "provider": "deepseek",
@@ -145,8 +171,11 @@ JSON
     "model": "deepseek-chat"
   }
 }
-Ollama (Local)
-JSON
+```
+
+### Ollama (Local)
+
+```json
 {
   "ai": {
     "provider": "ollama",
@@ -154,8 +183,11 @@ JSON
     "model": "llama2"
   }
 }
-Module Structure
-Code
+```
+
+## Module Structure
+
+```text
 bunnyera-console-core/
 ├── src/
 │   ├── index.ts              # Main entry
@@ -176,19 +208,10 @@ bunnyera-console-core/
 ├── package.json
 ├── tsconfig.json
 └── README.md
-License
+```
+
+## License
+
 MIT
 
 Made with ❤️ by BunnyEra Team
-
-
-
-
-
-
-
-
-
-
-
-
